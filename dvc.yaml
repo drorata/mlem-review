@@ -13,3 +13,5 @@ stages:
       - ./data/raw_X.pkl
       - ./data/raw_y.pkl
       - train_and_persist.py
+    outs:
+      - ./.mlem/model/rf

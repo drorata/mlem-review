@@ -4,12 +4,28 @@ stages:
     cmd: python get_data.py
     deps:
     - path: get_data.py
-      md5: ba8fb45da64741139395d0605bf451f1
-      size: 164
+      md5: 4ad94e0023bf0616ec94e0289673234b
+      size: 155
     outs:
     - path: ./data/raw_X.pkl
       md5: ba571212115ce461af02dcbbdc4fc506
       size: 5560
     - path: ./data/raw_y.pkl
+      md5: 5096182e81b98a31feef1d28112e3172
+      size: 1788
+  train_and_mlem_persist:
+    cmd: python train_and_persist.py
+    deps:
+    - path: ./data/raw_X.pkl
       md5: ba571212115ce461af02dcbbdc4fc506
       size: 5560
+    - path: ./data/raw_y.pkl
+      md5: 5096182e81b98a31feef1d28112e3172
+      size: 1788
+    - path: train_and_persist.py
+      md5: 7b7a78d7135b7bd2cd140f24a067e549
+      size: 371
+    outs:
+    - path: ./.mlem/model/rf
+      md5: 7a0446436ed6d60db7f3924feb1146a2
+      size: 163685

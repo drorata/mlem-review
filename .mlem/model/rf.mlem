@@ -1,0 +1,108 @@
+artifacts:
+  data:
+    hash: 7a0446436ed6d60db7f3924feb1146a2
+    size: 163685
+    type: dvc
+    uri: rf
+description: Random Forest Classifier
+model_type:
+  methods:
+    predict:
+      args:
+      - name: data
+        type_:
+          columns:
+          - sepal length (cm)
+          - sepal width (cm)
+          - petal length (cm)
+          - petal width (cm)
+          dtypes:
+          - float64
+          - float64
+          - float64
+          - float64
+          index_cols: []
+          type: dataframe
+      name: predict
+      returns:
+        dtype: int64
+        shape:
+        - null
+        type: ndarray
+    predict_proba:
+      args:
+      - name: data
+        type_:
+          columns:
+          - sepal length (cm)
+          - sepal width (cm)
+          - petal length (cm)
+          - petal width (cm)
+          dtypes:
+          - float64
+          - float64
+          - float64
+          - float64
+          index_cols: []
+          type: dataframe
+      name: predict_proba
+      returns:
+        dtype: float64
+        shape:
+        - null
+        - 3
+        type: ndarray
+    sklearn_predict:
+      args:
+      - name: X
+        type_:
+          columns:
+          - sepal length (cm)
+          - sepal width (cm)
+          - petal length (cm)
+          - petal width (cm)
+          dtypes:
+          - float64
+          - float64
+          - float64
+          - float64
+          index_cols: []
+          type: dataframe
+      name: predict
+      returns:
+        dtype: int64
+        shape:
+        - null
+        type: ndarray
+    sklearn_predict_proba:
+      args:
+      - name: X
+        type_:
+          columns:
+          - sepal length (cm)
+          - sepal width (cm)
+          - petal length (cm)
+          - petal width (cm)
+          dtypes:
+          - float64
+          - float64
+          - float64
+          - float64
+          index_cols: []
+          type: dataframe
+      name: predict_proba
+      returns:
+        dtype: float64
+        shape:
+        - null
+        - 3
+        type: ndarray
+  type: sklearn
+object_type: model
+requirements:
+- module: sklearn
+  version: 1.1.1
+- module: pandas
+  version: 1.4.2
+- module: numpy
+  version: 1.22.4
