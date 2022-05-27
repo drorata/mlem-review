@@ -1,0 +1,7 @@
+ipykernel
+pandas==1.4.2
+scikit-learn==1.1.1
+# See https://discordapp.com/channels/485586884165107732/978997830251315260/979027911061417984
+dill==0.3.4
+dvc==2.10.2
+mlem==0.1.14
