@@ -1,0 +1,15 @@
+schema: '2.0'
+stages:
+  get_data:
+    cmd: python get_data.py
+    deps:
+    - path: get_data.py
+      md5: ba8fb45da64741139395d0605bf451f1
+      size: 164
+    outs:
+    - path: ./data/raw_X.pkl
+      md5: ba571212115ce461af02dcbbdc4fc506
+      size: 5560
+    - path: ./data/raw_y.pkl
+      md5: ba571212115ce461af02dcbbdc4fc506
+      size: 5560
