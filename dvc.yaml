@@ -6,6 +6,8 @@ stages:
     outs:
       - ./data/raw_X.pkl
       - ./data/raw_y.pkl
+      - ./data/X_test.pkl
+      - ./data/y_test.pkl
 
   train_and_mlem_persist:
     cmd: python train_and_persist.py
