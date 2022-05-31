@@ -1,0 +1,22 @@
+version: "3"
+
+tasks:
+  dockerize:
+    desc: Build docker image from model
+    summary: |
+      Using MLEM, build a docker image that can serve the trained model using FastAPI
+    cmds:
+      # Removing the existing image. See:
+      # https://discordapp.com/channels/485586884165107732/903647230655881226/981144140723130428
+      # for more details.
+      - docker image remove rf-image-test
+      - mlem build rf docker --conf server.type=fastapi --conf image.name=rf-image-test
+
+  serve-image:
+    desc: Run a container from the image serving the model
+    summary: |
+      Using the image built in "dockerize", this stage will start a container that will
+      provide a RESTful API to make predictions using the trained model. Go to
+      http://localhost:8080/docs to see what can be done.
+    cmds:
+      - docker run --rm -it -p 8080:8080 rf-image-test
