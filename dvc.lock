@@ -4,33 +4,33 @@ stages:
     cmd: python get_data.py
     deps:
     - path: get_data.py
-      md5: 6806c68c53743b1a140532cfad070531
-      size: 408
+      md5: 927415005511cf7354e9d6e575ca69c1
+      size: 412
     outs:
     - path: ./data/X_test.pkl
       md5: a0f9684f28768ad63d524be3b5ccccf5
       size: 1995
-    - path: ./data/raw_X.pkl
+    - path: ./data/X_train.pkl
       md5: b4059999a12bf099d6f9a5bc508290ac
       size: 5595
-    - path: ./data/raw_y.pkl
-      md5: 742d15f46d135b78d265c8bd8f716f07
-      size: 3489
     - path: ./data/y_test.pkl
       md5: da1bcd26c402db561afea842480896de
       size: 1329
+    - path: ./data/y_train.pkl
+      md5: 742d15f46d135b78d265c8bd8f716f07
+      size: 3489
   train_and_mlem_persist:
     cmd: python train_and_persist.py
     deps:
-    - path: ./data/raw_X.pkl
+    - path: ./data/X_train.pkl
       md5: b4059999a12bf099d6f9a5bc508290ac
       size: 5595
-    - path: ./data/raw_y.pkl
+    - path: ./data/y_train.pkl
       md5: 742d15f46d135b78d265c8bd8f716f07
       size: 3489
     - path: train_and_persist.py
-      md5: 7b7a78d7135b7bd2cd140f24a067e549
-      size: 371
+      md5: ba8ebc4641f4e41650c59f0a36d012fe
+      size: 376
     outs:
     - path: ./.mlem/model/rf
       md5: 86cfa9f32fad6cb353de2c631290f113

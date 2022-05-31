@@ -4,16 +4,16 @@ stages:
     deps:
       - get_data.py
     outs:
-      - ./data/raw_X.pkl
-      - ./data/raw_y.pkl
+      - ./data/X_train.pkl
+      - ./data/y_train.pkl
       - ./data/X_test.pkl
       - ./data/y_test.pkl
 
   train_and_mlem_persist:
     cmd: python train_and_persist.py
     deps:
-      - ./data/raw_X.pkl
-      - ./data/raw_y.pkl
+      - ./data/X_train.pkl
+      - ./data/y_train.pkl
       - train_and_persist.py
     outs:
       - ./.mlem/model/rf
