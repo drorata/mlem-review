@@ -10,6 +10,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 
 # After splitting to training and testing data sets, the script serializes four
 # pickles that are the output. This is also reflected in dvc.yaml!
+# Index is reset; see https://github.com/iterative/mlem/issues/280 for more details.
 X_train.reset_index(drop=True).to_pickle("./data/X_train.pkl")
 y_train.reset_index(drop=True).to_pickle("./data/y_train.pkl")
 

@@ -59,4 +59,8 @@ Once it is up and running, the documentation of the endpoints of the new API can
 To make it easier, [`Taskfile.yml`](./Taskfile.yml) can help in building and serving the image.
 See [`task`](https://taskfile.dev/) for more details.
 
-**TBA: Evaluate the model by getting predictions from the API for the test set.**
+Finally, we can get predictions for our test set using [`evaluate.py`](./evaluate.py).
+To that end we simply send a list of dictionaries to the `/predict` end point and get, in return, a list of predictions.
+Isn't it really wonderful?
+
+![awesome](https://cdn.pixabay.com/photo/2020/06/04/08/50/awesome-5257905_1280.png)
