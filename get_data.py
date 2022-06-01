@@ -8,6 +8,8 @@ X_train, X_test, y_train, y_test = train_test_split(
     X, y, test_size=0.2, shuffle=True, random_state=42
 )
 
+# After splitting to training and testing data sets, the script serializes four
+# pickles that are the output. This is also reflected in dvc.yaml!
 X_train.to_pickle("./data/X_train.pkl")
 y_train.to_pickle("./data/y_train.pkl")
 
