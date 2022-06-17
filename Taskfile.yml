@@ -8,8 +8,9 @@ tasks:
     cmds:
       # Removing the existing image. See:
       # https://discordapp.com/channels/485586884165107732/903647230655881226/981144140723130428
+      # and https://github.com/iterative/mlem/issues/278
       # for more details.
-      - docker image remove rf-image-test
+      - docker image remove --force --no-prune rf-image-test
       - mlem build rf docker --conf server.type=fastapi --conf image.name=rf-image-test
 
   serve-image:
