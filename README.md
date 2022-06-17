@@ -19,7 +19,7 @@ This script is used in the first stage of the DVC pipeline which is coded in [`d
 
 In [`train_and_persist.py`](./train_and_persist.py) we, well, train and persist the model.
 Again, in `dvc.yaml` this script is used as the second stage.
-Here's it is important to pay more attention to the `mlem.api.save()` statement:
+Here it is important to pay more attention to the `mlem.api.save()` statement:
 
 ```python
 save(
@@ -28,7 +28,7 @@ save(
 ```
 
 `rf` is the fitted model and it is given a name; the _string_ `"rf"`.
-In addition a description is provided.
+In addition a description is provided (See issue [#279](https://github.com/iterative/mlem/issues/279) for a related topic).
 Furthermore, by providing a value to the parameter `sample_data`, MLEM will include the schema of the data in the model's meta data.
 Checkout [`.mlem/model/rf.mlem`](./.mlem/model/rf.mlem).
 
@@ -47,7 +47,7 @@ By running:
 mlem build rf docker --conf server.type=fastapi --conf image.name=rf-image-test
 ```
 
-MLEM will build a docker image that can be used to get predictions from the trained model using RESTful API.
+MLEM will build a docker image that can be used to get predictions from the trained model using an API.
 Once the image is built, a container can be ran:
 
 ```
@@ -57,10 +57,20 @@ docker run --rm -it -p 8080:8080 rf-image-test
 Once it is up and running, the documentation of the endpoints of the new API can be found here: http://0.0.0.0:8080/docs.
 
 To make it easier, [`Taskfile.yml`](./Taskfile.yml) can help in building and serving the image.
-See [`task`](https://taskfile.dev/) for more details.
+For more details on how to use a `Taskfile`, checkout [`task`](https://taskfile.dev/).
 
-Finally, we can get predictions for our test set using [`evaluate.py`](./evaluate.py).
+Finally, once MLEM is serving the model, we can get predictions for our test set using [`evaluate.py`](./evaluate.py).
 To that end we simply send a list of dictionaries to the `/predict` end point and get, in return, a list of predictions.
 Isn't it really wonderful?
 
-![awesome](https://cdn.pixabay.com/photo/2020/06/04/08/50/awesome-5257905_1280.png)
+<center>
+<img src="https://cdn.pixabay.com/photo/2020/06/04/08/50/awesome-5257905_1280.png" alt="Isn't it awesome?" width=25% height=25%>
+</center>
+
+## Summary
+
+So, in this repository you can find an end-to-end example how to bring your ML model to life as an API that can return predictions.
+This bridges a huge hurdle that data science teams face.
+After completing the hard work related to data fetching, cleaning, feature engineering, models training/evaluation/tuning and so on, the team is ready to deliver great value.
+Alas... Now support from DevOps and Data engineers is needed to bring the model to production.
+Using MLEM, the team is much closer to be independent and impact directly and quickly.
