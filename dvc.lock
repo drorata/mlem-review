@@ -4,8 +4,8 @@ stages:
     cmd: python get_data.py
     deps:
     - path: get_data.py
-      md5: 3759333a55313743b69a21128bdcab2a
-      size: 651
+      md5: 8008e8cd0bc384828e1cdb8bb3a1233f
+      size: 736
     outs:
     - path: ./data/X_test.pkl
       md5: 5259a9cc38eb5e24442cfb5ec2472c22

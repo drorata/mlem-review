@@ -2,6 +2,6 @@ ipykernel
 pandas==1.4.2
 scikit-learn==1.1.1
 dvc==2.10.2
-mlem==0.2.1
+mlem==0.2.3
 fastapi==0.78.0
 uvicorn==0.17.6
